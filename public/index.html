@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./css/styles.css" rel="stylesheet">
+    <script src="./scripts/script.js" defer></script>
+    <title>MovieSearchEngine</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>MovieSearchEngine</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="#">By gategories</a></li>
+                <li><a href="#">By names</a></li>
+                <li><a href="#">By actors</a></li>
+            </ul>
+        </nav>
+        <div id="main_content">
+            <h2>Search by Gategory</h2>
+            <form action="/submit" method="post">
+                <label for="inputText">Enter gategory to search movies:</label>
+                <input type="text" id="inputText" name="inputText" placeholder="Type and search..." required>
+                <button type="submit">Submit</button>    
+            </form>
+            <section id="search_results">
+                <label for="results" id="results_label">Results</label>
+                <div id="results"></div>
+            </section>
+        </div>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>
