@@ -53,6 +53,8 @@ nav ul li a {
 }
 
 div#main_content {
+    display: inherit;
+    flex-direction: column;
     margin: 1em;
     padding: 1em;
     border: 3px solid #464646;
@@ -60,6 +62,7 @@ div#main_content {
 
 div#main_content h2 {
     font-size: 2em;
+    text-align: center;
 }
 
 form label {
@@ -77,6 +80,8 @@ button {
 
 section#search_results {
     margin-top: 2em;
+    display: inherit;
+    flex-direction: column;
 }
 
 label#results_label {
@@ -84,10 +89,42 @@ label#results_label {
 }
 
 div#results {
+    display: inherit;
+    flex-direction: column;
     height: 50vh;
+    width: 100%;
     background-color: #000;
     overflow: auto;
     padding: 1em;  
     color: #fff; 
     font-size: 25px;
+}
+
+div#movies {
+    display: inherit;
+    flex-direction: column;
+    width: 100%;
+}
+
+.movie_row {
+    display: inherit;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 1em;
+}
+
+span {
+    width: 20%;
+}
+
+.heading_row {
+    display: inherit;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.heading_row h3 {
+    width: 20%;
 }

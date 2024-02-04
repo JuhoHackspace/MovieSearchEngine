@@ -15,8 +15,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/category", function(req, res) {
   var genre = req.body.genre;
+  var currentPage = req.body.page;
   console.log("method genre: "+genre);
-  const url = 'https://api.themoviedb.org/3/discover/movie?api_key='+process.env.api_key+'&with_genres='+genre+'&page=20';
+  console.log("method page: "+currentPage);
+  const url = 'https://api.themoviedb.org/3/discover/movie?api_key='+process.env.api_key+'&with_genres='+genre+'&page='+currentPage;
 
   fetch(url).then(response => response.json()).then(json => {
         res.json(json)

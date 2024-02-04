@@ -15,21 +15,27 @@
             </div>
             <h1>MovieSearchEngine</h1>
         </header>
-        <nav>
-            <ul>
-                <li><a href="index.html">By gategories</a></li>
-                <li><a href="#">By names</a></li>
-                <li><a href="#">By actors</a></li>
-            </ul>
-        </nav>
         <div id="main_content">
-            <h2>Search by Gategory</h2>
+            <h2>Search Movies by Gategory</h2>
                 <label for="inputText">Enter gategory to search movies:</label>
                 <input type="text" id="inputText" name="inputText" placeholder="Type and search..." required>
-                <button onclick="fetchMovies()">Submit</button>    
+                <button onclick="fetchMovies(0, true)">Submit</button>    
             <section id="search_results">
                 <label for="results" id="results_label">Results</label>
-                <div id="results"></div>
+                <div id="results">
+                    <div class="heading_row">
+                        <h3 id="title">Title</h3>
+                        <h3 id="genres">Genres</h3>
+                        <h3 id="release">Release year</h3>
+                        <h3 id="poster">Poster</h3>
+                    </div>
+                    <div id="movies">
+                    </div>
+                </div>
+                <div id="page_nav">
+                    <button onclick="fetchMovies(-1,false)">Previous</button>
+                    <button onclick="fetchMovies(1,false)">Next</button>
+                </div>
             </section>
         </div>
         <footer>
