@@ -46,7 +46,7 @@ function fetchMovies(changePageBy, new_genre) {
     }
     const resultsContainer = document.getElementById('movies');
     resultsContainer.innerHTML = "";
-    fetch("http://localhost:3000/category", {
+    fetch("/category", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
