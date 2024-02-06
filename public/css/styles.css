@@ -32,24 +32,8 @@ div#image_wrapper img {
 }
 
 header h1 {
-    font-size: 4em;
+    font-size: 5vw;
     margin-bottom: 1em;
-}
-
-nav {
-    display: inherit;
-    justify-content: center;
-    align-items: center;
-}
-
-nav ul li {
-    display: inline-block;
-}
-
-nav ul li a {
-    margin: 1em;
-    color: #000;
-    font-size: 2em;
 }
 
 div#main_content {
@@ -61,31 +45,50 @@ div#main_content {
 }
 
 div#main_content h2 {
-    font-size: 2em;
+    font-size: 3vw;
     text-align: center;
 }
 
-form label {
-    font-size: 1.5em;
+section#search_params {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
-input {
+select {
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+div#main_content label {
+    font-size: 1.5em;
+    margin-top: 0.2em;
+}
+
+input[type= 'checkbox'] {
     height: 1.5em;
 }
 
 button {
-    height: 1.8em;
+    height: 2em;
     width: 5em;
+    font-size: 1em;
+    margin-top: 0.5em;
+}
+
+button:hover {
+    font-weight: bold;
+    background-color: #0f0;
 }
 
 section#search_results {
-    margin-top: 2em;
+    margin-top: 0.5em;
     display: inherit;
     flex-direction: column;
 }
 
 label#results_label {
-    font-size: 2em;
+    font-size: 1.5em;
 }
 
 div#results {
@@ -127,4 +130,8 @@ span {
 
 .heading_row h3 {
     width: 20%;
+}
+
+div#page_nav button {
+    margin-top: 0.5em;
 }

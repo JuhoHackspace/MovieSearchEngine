@@ -16,9 +16,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post("/category", function(req, res) {
   var genre = req.body.genre;
   var currentPage = req.body.page;
+  var filter = req.body.filter;
+  const api_key = process.env.api_key;
+
   console.log("method genre: "+genre);
   console.log("method page: "+currentPage);
-  const url = 'https://api.themoviedb.org/3/discover/movie?api_key='+process.env.api_key+'&with_genres='+genre+'&page='+currentPage;
+  console.log("method filter: "+filter);
+  
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&with_genres=${genre}&page=${currentPage}${filter === "en" ? "&with_original_language=en" : ""}`;
 
   fetch(url).then(response => response.json()).then(json => {
         res.json(json)

@@ -24,7 +24,7 @@ const reverseGenreMap = new Map([...genreMap.entries()].map(([id, genre]) => [ge
 
 function fetchMovies(changePageBy, new_genre) {
     if(new_genre===true) {
-        var genre = document.getElementById('inputText').value;
+        var genre = document.getElementById('dropdownMenu').value;
         sessionStorage.setItem('genre', genre);
         sessionStorage.setItem('cnt_page',1);
     }
@@ -39,6 +39,11 @@ function fetchMovies(changePageBy, new_genre) {
             cnt_page+=1;
         }
     }
+    var language_filter = 'none';
+    var checkbox = document.getElementById('englishCheckbox');
+    if(checkbox.checked) {
+        language_filter = 'en';
+    }
     const resultsContainer = document.getElementById('movies');
     resultsContainer.innerHTML = "";
     fetch("http://localhost:3000/category", {
@@ -48,7 +53,8 @@ function fetchMovies(changePageBy, new_genre) {
         },
         body: JSON.stringify({
             genre: genreID,
-            page: cnt_page
+            page: cnt_page,
+            filter: language_filter 
         }),
     }).then(response => response.json()).then(data => {
         for(let i = 0; i < data.results.length; i++) {

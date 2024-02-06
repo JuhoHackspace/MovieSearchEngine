@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/styles.css" rel="stylesheet">
-    <script src="./scripts/search_script.js" defer></script>
     <title>MovieSearchEngine</title>
 </head>
 <body>
@@ -17,11 +16,35 @@
         </header>
         <div id="main_content">
             <h2>Search Movies by Gategory</h2>
+            <section id="search_params">
                 <label for="inputText">Enter gategory to search movies:</label>
-                <input type="text" id="inputText" name="inputText" placeholder="Type and search..." required>
-                <button onclick="fetchMovies(0, true)">Submit</button>    
+                <select id="dropdownMenu">
+                    <option value="Action">Action</option>
+                    <option value="Adventure">Adventure</option>
+                    <option value="Animation">Animation</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Crime">Crime</option>
+                    <option value="Documentary">Documentary</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Family">Family</option>
+                    <option value="Fantasy">Fantasy</option>
+                    <option value="History">History</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Music">Music</option>
+                    <option value="Mystery">Mystery</option>
+                    <option value="Romance">Romance</option>
+                    <option value="Science Fiction">Sci-Fi</option>
+                    <option value="TV Movie">TV Movie</option>
+                    <option value="Thriller">Thriller</option>
+                    <option value="War">War</option>
+                    <option value="Western">Western</option>
+                </select>
+                <label for="englishCheckbox">Show only English Movies</label>
+                <input type="checkbox" id="englishCheckbox"> 
+                <button onclick="fetchMovies(0, true)">Submit</button>
+            </section>   
             <section id="search_results">
-                <label for="results" id="results_label">Results</label>
+                <label for="results" id="results_label">Results - Most popular first</label>
                 <div id="results">
                     <div class="heading_row">
                         <h3 id="title">Title</h3>
@@ -41,5 +64,6 @@
         <footer>
         </footer>
     </div>
+    <script src="./scripts/search_script.js" defer></script>
 </body>
 </html>
